@@ -1,7 +1,8 @@
-/data/costs/* 
+data/costs/* 
 
-/data/*.txt
+data/*.txt
 
 *.mod
 
-./venv
+venv/
+.venv
