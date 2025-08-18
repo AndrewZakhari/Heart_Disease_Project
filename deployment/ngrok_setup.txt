@@ -1,0 +1,57 @@
+# Ngrok Setup for Heart Disease Prediction App
+
+This document describes how to deploy the Streamlit web application locally and make it publicly accessible using Ngrok.
+
+## Prerequisites
+
+1.  Ensure the Heart Disease ML Pipeline project is set up and all dependencies are installed (`pip install -r requirements.txt`).
+2.  The final trained model (`models/final_model.pkl`) must exist.
+3.  The Streamlit UI code (`ui/app.py`) must be present.
+4.  Ngrok must be installed on your system. Download it from https://ngrok.com/ and follow the initial setup instructions (e.g., creating an account, adding authtoken).
+
+## Steps
+
+1.  **Navigate to Project Root:**
+    Open your terminal or command prompt and navigate to the root directory of the project (where `requirements.txt` is located).
+    ```bash
+    cd path/to/Heart_Disease_Project
+    ```
+
+2.  **Activate Virtual Environment (if used):**
+    Activate the Python virtual environment where the project dependencies are installed.
+    ```bash
+    # On Linux/macOS:
+    source venv/bin/activate
+    # On Windows:
+    venv\Scripts\activate
+    ```
+
+3.  **Run the Streamlit App Locally:**
+    Execute the Streamlit application. By default, it will start on port 8501.
+    ```bash
+    streamlit run ui/app.py
+    ```
+    Note the local URL displayed in the terminal (usually `http://localhost:8501`).
+
+4.  **Start Ngrok Tunnel:**
+    In a new terminal window/tab (keeping the Streamlit app running), navigate to the directory where `ngrok` is installed or ensure it's in your system's PATH. Then, create an HTTP tunnel to the local Streamlit port (8501).
+    ```bash
+    ngrok http 8501
+    ```
+    If Streamlit is running on a different port, replace `8501` with that port number.
+
+5.  **Access the Public URL:**
+    Ngrok will display output in its terminal window. Look for the line starting with `Forwarding`. It will show a public HTTPS URL (e.g., `https://abcd1234.ngrok.io`).
+    ```
+    Forwarding                    https://abcd1234.ngrok.io -> http://localhost:8501
+    ```
+    Copy this public URL.
+
+6.  **Share the Public URL:**
+    Share the `https://abcd1234.ngrok.io` link with anyone who needs to access the application remotely. As long as the `ngrok` command is running and your local Streamlit server is active, the link will be accessible.
+
+## Notes
+
+*   The free tier of Ngrok provides a randomly generated URL each time and has usage limits.
+*   The tunnel is active only while the `ngrok http 8501` command is running.
+*   For production deployment, consider more robust solutions like cloud platforms (Heroku, AWS, GCP, Azure) or containerization (Docker) with proper web servers.
