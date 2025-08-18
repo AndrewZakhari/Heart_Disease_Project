@@ -5,26 +5,26 @@ This project implements a comprehensive machine learning pipeline to analyze, pr
 ## Project Structure
 
 Heart_Disease_Project/
-├── data/
-│   └── heart_disease.csv (and potentially processed versions)
-├── notebooks/
-│   ├── 01_data_preprocessing.ipynb
-│   ├── 02_pca_analysis.ipynb
-│   ├── 03_feature_selection.ipynb
-│   ├── 04_supervised_learning.ipynb
-│   ├── 05_unsupervised_learning.ipynb
-│   └── 06_hyperparameter_tuning.ipynb
-├── models/
-│   └── final_model.pkl
-├── ui/
-│   └── app.py
-├── deployment/
-│   └── ngrok_setup.txt
-├── results/
-│   └── (Evaluation metrics, charts, etc.)
-├── README.md
-├── requirements.txt
-└── .gitignore
+├── data/\
+│   └── heart_disease.csv (and potentially processed versions)\
+├── notebooks/\
+│   ├── 01_data_preprocessing.ipynb\
+│   ├── 02_pca_analysis.ipynb\
+│   ├── 03_feature_selection.ipynb\
+│   ├── 04_supervised_learning.ipynb\
+│   ├── 05_unsupervised_learning.ipynb\
+│   └── 06_hyperparameter_tuning.ipynb\
+├── models/\
+│   └── final_model.pkl\
+├── ui/\
+│   └── app.py\
+├── deployment/\
+│   └── ngrok_setup.txt\
+├── results/\
+│   └── (Evaluation metrics, charts, etc.)\
+├── README.md\
+├── requirements.txt\
+└── .gitignore\
 
 
 ## Features
